@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An accessible showcase of carousel, checkbox, combobox, and modal dialog controls.">
+    <title>Components lab — Test 11</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="../">TVAS <span>LAB</span></a>
+      <p>COMPONENT EXPLORER · 11</p>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">INTERACTION PATTERNS</p>
+        <h1 id="page-title">Browse. Select. Confirm.</h1>
+        <p>Four everyday interface controls, built to work with mouse, touch, and keyboard.</p>
+      </section>
+
+      <section class="carousel-section" aria-labelledby="carousel-title">
+        <div class="section-heading"><p class="eyebrow">01 / CAROUSEL</p><h2 id="carousel-title">Seasonal stories</h2></div>
+        <div class="carousel" role="region" aria-roledescription="carousel" aria-labelledby="carousel-title">
+          <div class="carousel-image-wrap">
+            <img id="slide-image" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=85" alt="Person in a neutral suit standing on a city street">
+            <div class="slide-copy"><p id="slide-kicker" class="eyebrow">CITY EDIT</p><h3 id="slide-title">Soft tailoring, sharp lines.</h3></div>
+          </div>
+          <div class="carousel-controls">
+            <button id="previous-slide" type="button" aria-label="Previous slide">← <span>Previous</span></button>
+            <p id="slide-status" aria-live="polite">Slide 1 of 3</p>
+            <button id="next-slide" type="button" aria-label="Next slide"><span>Next</span> →</button>
+          </div>
+          <div class="slide-picker" aria-label="Choose a slide" role="group">
+            <button type="button" class="current" aria-current="true" data-slide="0"><span class="sr-only">Slide 1: City edit</span></button>
+            <button type="button" data-slide="1"><span class="sr-only">Slide 2: Weekend layers</span></button>
+            <button type="button" data-slide="2"><span class="sr-only">Slide 3: Bright essentials</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="control-grid" aria-label="Form controls">
+        <article class="control-card" aria-labelledby="preferences-title">
+          <p class="eyebrow">02 / CHECKBOXES</p>
+          <h2 id="preferences-title">Your preferences</h2>
+          <p class="muted">Choose the updates that suit you.</p>
+          <fieldset>
+            <legend class="sr-only">Email update preferences</legend>
+            <label><input type="checkbox" checked> New collection drops</label>
+            <label><input type="checkbox"> Limited-time offers</label>
+            <label><input type="checkbox"> Back-in-stock notices</label>
+          </fieldset>
+          <button class="text-button" id="save-preferences" type="button">Save preferences</button>
+          <p class="feedback" id="preferences-feedback" role="status"></p>
+        </article>
+
+        <article class="control-card" aria-labelledby="store-title">
+          <p class="eyebrow">03 / COMBOBOX</p>
+          <h2 id="store-title">Select a store</h2>
+          <p class="muted">Find the closest collection point.</p>
+          <label for="store-select">Collection point</label>
+          <select id="store-select" name="store">
+            <option value="">Choose a city</option>
+            <option>New Delhi — Khan Market</option>
+            <option>Mumbai — Linking Road</option>
+            <option>Bengaluru — Indiranagar</option>
+            <option>Hyderabad — Banjara Hills</option>
+          </select>
+          <p class="feedback" id="store-feedback" role="status">Select a city to see its collection point.</p>
+        </article>
+      </section>
+
+      <section class="dialog-panel" aria-labelledby="dialog-title">
+        <div><p class="eyebrow">04 / DIALOG</p><h2 id="dialog-title">Need a little help?</h2><p>Open a modal to leave a short message for the team.</p></div>
+        <button class="primary-button" id="open-dialog" type="button">Open support dialog</button>
+      </section>
+    </main>
+
+    <dialog id="support-dialog" aria-labelledby="support-dialog-title">
+      <form id="support-form" method="dialog">
+        <div class="dialog-heading"><div><p class="eyebrow">SUPPORT</p><h2 id="support-dialog-title">How can we help?</h2></div><button id="close-dialog" class="icon-button" type="button" aria-label="Close support dialog">×</button></div>
+        <label for="support-topic">Topic</label>
+        <select id="support-topic" required><option value="">Select a topic</option><option>Order update</option><option>Returns</option><option>Product question</option></select>
+        <label for="support-message">Your message</label>
+        <textarea id="support-message" rows="4" required></textarea>
+        <div class="dialog-actions"><button class="primary-button" type="submit">Send message</button><button class="secondary-button" id="cancel-dialog" type="button">Cancel</button></div>
+      </form>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

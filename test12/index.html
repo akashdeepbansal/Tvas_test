@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Myntra-inspired account dashboard with sortable order history and order activity.">
+    <title>My orders — RIVA</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to order history</a>
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="RIVA home">RIVA<span>•</span></a>
+      <nav aria-label="Primary navigation">
+        <ul><li><a href="#new">New arrivals</a></li><li><a href="#women">Women</a></li><li><a href="#men">Men</a></li><li><a href="#studio">Studio</a></li></ul>
+      </nav>
+      <a class="account-link" href="#account">My account</a>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../">Home</a></li><li><a href="#account">My account</a></li><li aria-current="page">Orders</li></ol></nav>
+      <section class="account-heading" aria-labelledby="page-title">
+        <div><p class="eyebrow">AKASHDEEP'S ACCOUNT</p><h1 id="page-title">Orders &amp; returns</h1><p>Track deliveries, review invoices, and revisit your favourites.</p></div>
+        <a class="outline-button" href="#order-history">View all orders</a>
+      </section>
+
+      <section class="metrics" aria-label="Order metrics">
+        <article><p>Orders this year</p><strong>12</strong><span>3 more than last year</span></article>
+        <article><p>In transit</p><strong>01</strong><span>Expected tomorrow</span></article>
+        <article><p>Saved on member days</p><strong>₹2,860</strong><span>Across 5 offers</span></article>
+      </section>
+
+      <div class="dashboard-layout">
+        <section class="order-column" aria-labelledby="latest-order-title">
+          <div class="section-label"><p class="eyebrow">LATEST ORDER</p><a href="#order-history">Order history</a></div>
+          <article class="latest-order">
+            <div class="order-topline"><div><p class="order-id">ORDER #RV-819294</p><h2 id="latest-order-title">Arriving tomorrow</h2></div><p class="status in-transit"><span aria-hidden="true">●</span> In transit</p></div>
+            <div class="order-detail"><div class="product-tile" aria-hidden="true">M</div><div><h3>Everyday relaxed-fit shirt</h3><p>Stone · Size M · Qty 1</p><p class="delivery-note">Courier is out for delivery in your area.</p></div><strong>₹1,499</strong></div>
+            <div class="order-actions"><a class="filled-button" href="#tracking">Track package</a><a class="text-link" href="#invoice">Get help</a></div>
+          </article>
+
+          <section class="details-section" aria-labelledby="details-title"><h2 id="details-title">Order details</h2>
+            <details><summary>Shipment details</summary><div class="disclosure-content"><p><strong>Delivery address</strong><br>Akashdeep Bansal<br>24, Sector 18, Noida 201301</p><p><strong>Carrier</strong><br>BlueDart · Tracking ID BD482930190</p></div></details>
+            <details><summary>Invoice &amp; payment</summary><div class="disclosure-content"><p><strong>Payment</strong><br>Visa ending 4421 · ₹1,499</p><a href="#download-invoice">Download tax invoice (PDF)</a></div></details>
+          </section>
+        </section>
+
+        <aside class="activity-feed" aria-labelledby="activity-title">
+          <div class="aside-heading"><div><p class="eyebrow">LIVE ACTIVITY</p><h2 id="activity-title">Order updates</h2></div><button id="add-update" type="button">Check for updates</button></div>
+          <p id="feed-status" class="sr-only" role="status" aria-live="polite"></p>
+          <ol id="activity-list" aria-live="polite" aria-relevant="additions text">
+            <li><time datetime="2026-11-22T09:24">9:24 AM</time><div><strong>Out for delivery</strong><p>Your order left the local hub.</p></div></li>
+            <li><time datetime="2026-11-22T07:12">7:12 AM</time><div><strong>Reached delivery hub</strong><p>Noida sorting centre received your parcel.</p></div></li>
+            <li><time datetime="2026-11-21T20:48">Yesterday</time><div><strong>Handed to carrier</strong><p>BlueDart collected your order.</p></div></li>
+          </ol>
+        </aside>
+      </div>
+
+      <section class="history-section" id="order-history" aria-labelledby="history-title">
+        <div><p class="eyebrow">PAST PURCHASES</p><h2 id="history-title">Order history</h2><p>Use the column headings to change the sort order.</p></div>
+        <div class="table-wrap" tabindex="0">
+          <table>
+            <caption class="sr-only">Order history. Select a column heading to sort the results.</caption>
+            <thead><tr><th scope="col" aria-sort="none"><button type="button" data-sort="order">Order <span class="sort-word">Sort</span></button></th><th scope="col" aria-sort="none"><button type="button" data-sort="date">Date <span class="sort-word">Sort</span></button></th><th scope="col" aria-sort="none"><button type="button" data-sort="items">Items <span class="sort-word">Sort</span></button></th><th scope="col" aria-sort="none"><button type="button" data-sort="total">Total <span class="sort-word">Sort</span></button></th><th scope="col" aria-sort="none"><button type="button" data-sort="status">Status <span class="sort-word">Sort</span></button></th></tr></thead>
+            <tbody id="order-rows">
+              <tr data-order="RV-817044" data-date="2026-11-03" data-items="2" data-total="3288" data-status="Delivered"><td><a href="#rv817044">#RV-817044</a></td><td>03 Nov 2026</td><td>2 items</td><td>₹3,288</td><td><span class="status delivered"><span aria-hidden="true">●</span> Delivered</span></td></tr>
+              <tr data-order="RV-812776" data-date="2026-10-19" data-items="1" data-total="899" data-status="Returned"><td><a href="#rv812776">#RV-812776</a></td><td>19 Oct 2026</td><td>1 item</td><td>₹899</td><td><span class="status returned"><span aria-hidden="true">●</span> Returned</span></td></tr>
+              <tr data-order="RV-810334" data-date="2026-10-01" data-items="3" data-total="4557" data-status="Delivered"><td><a href="#rv810334">#RV-810334</a></td><td>01 Oct 2026</td><td>3 items</td><td>₹4,557</td><td><span class="status delivered"><span aria-hidden="true">●</span> Delivered</span></td></tr>
+              <tr data-order="RV-806550" data-date="2026-09-12" data-items="2" data-total="2148" data-status="Cancelled"><td><a href="#rv806550">#RV-806550</a></td><td>12 Sep 2026</td><td>2 items</td><td>₹2,148</td><td><span class="status cancelled"><span aria-hidden="true">●</span> Cancelled</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p id="sort-status" class="sr-only" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer><a class="brand" href="../">RIVA<span>•</span></a><nav aria-label="Footer"><ul><li><a href="#help">Help centre</a></li><li><a href="#returns">Returns</a></li><li><a href="#privacy">Privacy</a></li></ul></nav><p>Made for everyday momentum.</p></footer>
+    <script src="./app.js"></script>
+  </body>
+</html>

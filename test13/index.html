@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A responsive rewards dashboard with accessible listbox and menu components.">
+    <title>Sway Rewards — Test 13</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to rewards</a>
+    <header class="site-header">
+      <a class="brand" href="../">SWAY<span>.</span></a>
+      <nav aria-label="Primary">
+        <ul class="menubar" role="menubar">
+          <li role="none"><button type="button" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="shop-menu" id="shop-button">Shop</button><ul class="menu" id="shop-menu" role="menu" aria-labelledby="shop-button" hidden><li role="none"><button type="button" role="menuitem" data-message="Women’s edits are being curated.">Women</button></li><li role="none"><button type="button" role="menuitem" data-message="Men’s edits are being curated.">Men</button></li><li role="none"><button type="button" role="menuitem" data-message="New arrivals are being curated.">New arrivals</button></li></ul></li>
+          <li role="none"><button type="button" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="discover-menu" id="discover-button">Discover</button><ul class="menu" id="discover-menu" role="menu" aria-labelledby="discover-button" hidden><li role="none"><button type="button" role="menuitem" data-message="Style stories are being curated.">Style stories</button></li><li role="none"><button type="button" role="menuitem" data-message="The Sway journal is being curated.">Journal</button></li></ul></li>
+          <li role="none"><a role="menuitem" href="#rewards">Rewards</a></li>
+        </ul>
+      </nav>
+      <button class="account-button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="account-menu" id="account-button">Akashdeep <span aria-hidden="true">⌄</span></button>
+      <ul class="menu account-menu" id="account-menu" role="menu" aria-labelledby="account-button" hidden><li role="none"><button type="button" role="menuitem" data-message="Profile details opened.">Profile</button></li><li role="none"><button type="button" role="menuitem" data-message="Account settings opened.">Settings</button></li></ul>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" id="rewards" aria-labelledby="page-title">
+        <div><p class="eyebrow">SWAY REWARDS</p><h1 id="page-title">A little more, every time.</h1><p>Welcome back, Akashdeep. You’re gathering points with every piece you choose.</p></div>
+        <div class="hero-capsule"><span>MEMBER SINCE</span><strong>2024</strong></div>
+      </section>
+
+      <section class="progress-card" aria-labelledby="progress-title">
+        <div><p class="eyebrow">YOUR PROGRESS</p><h2 id="progress-title">On your way to Gold</h2><p>540 more points unlock your next tier and free express delivery.</p></div>
+        <div class="meter-block"><div class="meter-label"><span>1,460 points</span><strong>2,000 points</strong></div><meter id="rewards-meter" min="0" max="2000" value="1460">1,460 out of 2,000 points</meter><p>73% complete · 540 points to Gold</p></div>
+      </section>
+
+      <section class="dashboard-grid" aria-label="Rewards dashboard">
+        <article class="listbox-card" aria-labelledby="reward-list-title">
+          <div class="card-heading"><div><p class="eyebrow">PICK A PERK</p><h2 id="reward-list-title">Spend your points</h2></div><span id="point-balance">1,460 pts</span></div>
+          <p class="help-text" id="listbox-help">Use the up and down arrow keys to browse rewards. Press Enter to select one.</p>
+          <div id="reward-listbox" class="reward-listbox" role="listbox" aria-labelledby="reward-list-title" aria-describedby="listbox-help" aria-activedescendant="reward-1" tabindex="0">
+            <div id="reward-1" role="option" aria-selected="true" data-name="₹250 off your next order" data-points="500"><span class="reward-number">500</span><div><strong>₹250 off your next order</strong><p>Apply when your cart reaches ₹1,499.</p></div><span class="selected-mark" aria-hidden="true">Selected</span></div>
+            <div id="reward-2" role="option" aria-selected="false" data-name="Free express delivery" data-points="700"><span class="reward-number">700</span><div><strong>Free express delivery</strong><p>For one order, any time this month.</p></div><span class="selected-mark" aria-hidden="true"></span></div>
+            <div id="reward-3" role="option" aria-selected="false" data-name="₹500 off a wardrobe refresh" data-points="1200"><span class="reward-number">1,200</span><div><strong>₹500 off a wardrobe refresh</strong><p>Use on a cart of ₹3,499 or more.</p></div><span class="selected-mark" aria-hidden="true"></span></div>
+          </div>
+          <div class="reward-action"><p id="reward-selection" role="status" aria-live="polite">₹250 off your next order selected.</p><button type="button" id="redeem-button">Redeem selected reward</button></div>
+        </article>
+
+        <aside class="earn-card" aria-labelledby="earn-title"><p class="eyebrow">WAYS TO EARN</p><h2 id="earn-title">Keep the good going.</h2><ul><li><strong>+100</strong><span>Share your birthday month</span></li><li><strong>+200</strong><span>Review a recent purchase</span></li><li><strong>+150</strong><span>Refer a friend</span></li></ul><button class="secondary-button" id="earn-menu-button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="earn-menu">More ways to earn</button><ul class="menu earn-menu" id="earn-menu" role="menu" aria-labelledby="earn-menu-button" hidden><li role="none"><button type="button" role="menuitem" data-message="Your birthday month reward has been saved.">Add birthday month</button></li><li role="none"><button type="button" role="menuitem" data-message="Referral details opened.">Refer a friend</button></li></ul></aside>
+      </section>
+
+      <section class="activity-card" aria-labelledby="activity-title"><div><p class="eyebrow">RECENT ACTIVITY</p><h2 id="activity-title">Points in motion</h2></div><ul><li><span>Order #SWY-64291</span><strong>+150 points</strong><time datetime="2026-11-20">20 Nov 2026</time></li><li><span>Member day bonus</span><strong>+75 points</strong><time datetime="2026-11-12">12 Nov 2026</time></li><li><span>Order #SWY-63744</span><strong>+230 points</strong><time datetime="2026-10-28">28 Oct 2026</time></li></ul></section>
+    </main>
+    <footer><a class="brand" href="../">SWAY<span>.</span></a><p>Style that gives back.</p><a href="#terms">Rewards terms</a></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

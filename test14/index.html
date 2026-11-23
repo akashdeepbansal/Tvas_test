@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive product customiser demonstrating radio group, sliders, multi-thumb range, and spinbutton controls.">
+    <title>Customise your fit — Test 14</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#customiser">Skip to customiser</a>
+    <header class="site-header"><a class="brand" href="../">SWAY<span>.</span></a><nav aria-label="Primary"><ul><li><a href="#new">New in</a></li><li><a href="#women">Women</a></li><li><a href="#men">Men</a></li><li><a href="#studio">Studio</a></li></ul></nav><a class="bag-link" href="#bag">Bag <span id="bag-count">0</span></a></header>
+
+    <main id="customiser" tabindex="-1">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../">Home</a></li><li><a href="#men">Men</a></li><li><a href="#shirts">Shirts</a></li><li aria-current="page">Custom fit shirt</li></ol></nav>
+      <div class="product-layout">
+        <section class="product-stage" aria-labelledby="product-name">
+          <div id="shirt-art" class="shirt-art navy" role="img" aria-label="Navy custom-fit shirt"><div class="collar"></div><div class="button-line"></div><div class="pocket"></div></div>
+          <div class="stage-note"><span>MADE FOR YOUR PACE</span><strong>Custom fit</strong></div>
+        </section>
+
+        <section class="customiser" aria-labelledby="product-name">
+          <p class="eyebrow">SWAY STUDIO</p><h1 id="product-name">The custom-fit Oxford shirt</h1><p class="price">₹1,899</p><p class="intro">Build a shirt that works exactly as hard as you do. Your configuration updates as you choose.</p>
+
+          <form id="product-form">
+            <fieldset class="control-group colour-group"><legend>Choose a colour</legend><p class="hint">Navy is selected.</p><div class="radio-grid">
+              <label><input type="radio" name="colour" value="Navy" checked><span class="swatch navy" aria-hidden="true"></span><span>Navy</span></label>
+              <label><input type="radio" name="colour" value="Stone"><span class="swatch stone" aria-hidden="true"></span><span>Stone</span></label>
+              <label><input type="radio" name="colour" value="Rose"><span class="swatch rose" aria-hidden="true"></span><span>Rose</span></label>
+              <label><input type="radio" name="colour" value="Sage"><span class="swatch sage" aria-hidden="true"></span><span>Sage</span></label>
+            </div></fieldset>
+
+            <section class="control-group" aria-labelledby="quantity-label"><div class="control-head"><label id="quantity-label" for="quantity">Quantity</label><output id="quantity-output" for="quantity">1 shirt</output></div><input id="quantity" name="quantity" type="number" min="1" max="10" step="1" value="1" inputmode="numeric" aria-describedby="quantity-help"><p id="quantity-help" class="hint">Enter a quantity from 1 to 10.</p></section>
+
+            <section class="control-group" aria-labelledby="fit-label"><div class="control-head"><label id="fit-label" for="fit-slider">Fit preference</label><output id="fit-output" for="fit-slider">Regular</output></div><input id="fit-slider" type="range" min="1" max="5" step="1" value="3" aria-describedby="fit-help"><div class="range-labels" aria-hidden="true"><span>Relaxed</span><span>Tailored</span></div><p id="fit-help" class="hint">Choose from relaxed to tailored. Regular fit is selected.</p></section>
+
+            <fieldset class="control-group price-range"><legend>Browse by price range</legend><div class="control-head"><span class="hint">Set your budget for matching pieces.</span><output id="price-output" aria-live="polite">₹800 — ₹2,400</output></div><div class="range-stack"><input id="price-min" type="range" min="500" max="3000" step="100" value="800" aria-label="Minimum price"><input id="price-max" type="range" min="500" max="3000" step="100" value="2400" aria-label="Maximum price"></div><div class="range-labels" aria-hidden="true"><span>₹500</span><span>₹3,000</span></div><p class="hint">Use both slider thumbs to set a minimum and maximum price.</p></fieldset>
+
+            <button class="add-button" type="submit">Add custom shirt to bag</button><p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer><a class="brand" href="../">SWAY<span>.</span></a><p>Good things, made personal.</p><a href="#delivery">Delivery &amp; returns</a></footer>
+    <script src="./app.js"></script>
+  </body>
+</html>

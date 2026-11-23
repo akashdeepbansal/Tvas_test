@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Responsive inventory workspace with tabs, toolbar, switches, and stock status table."><title>Inventory workspace — Test 15</title><link rel="stylesheet" href="./style.css"></head>
+  <body>
+    <a class="skip-link" href="#main">Skip to inventory</a>
+    <header><a class="brand" href="../">SWAY<span>.</span></a><p>MERCHANT STUDIO</p><a href="#account">Akashdeep</a></header>
+    <main id="main" tabindex="-1">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="../">Home</a></li><li><a href="#studio">Merchant studio</a></li><li aria-current="page">Inventory</li></ol></nav>
+      <section class="page-heading"><div><p class="eyebrow">CATALOGUE</p><h1>Inventory</h1><p>Keep every size, shade, and sell-through signal in one place.</p></div><button id="add-product" class="primary-button" type="button">Add product</button></section>
+
+      <section class="workspace" aria-label="Inventory controls and product table">
+        <div class="tabs" role="tablist" aria-label="Inventory view">
+          <button id="tab-all" role="tab" aria-selected="true" aria-controls="inventory-panel" tabindex="0">All products <span>24</span></button>
+          <button id="tab-low" role="tab" aria-selected="false" aria-controls="inventory-panel" tabindex="-1">Low stock <span>06</span></button>
+          <button id="tab-out" role="tab" aria-selected="false" aria-controls="inventory-panel" tabindex="-1">Out of stock <span>02</span></button>
+        </div>
+        <div id="inventory-panel" role="tabpanel" aria-labelledby="tab-all">
+          <div class="toolbar" role="toolbar" aria-label="Inventory actions"><div class="toolbar-group"><button id="refresh" type="button">Refresh inventory</button><button id="export" type="button">Export CSV</button></div><div class="toolbar-group"><button id="filter" type="button" aria-pressed="false">Low-stock filter</button><button id="bulk-edit" type="button">Bulk edit</button></div></div>
+          <div class="preferences" aria-labelledby="preferences-title"><div><p class="eyebrow">AUTOMATION</p><h2 id="preferences-title">Stock preferences</h2></div><div class="switches"><label class="switch-row"><span><strong>Low-stock alerts</strong><small>Email me when a variant reaches 5 units.</small></span><input id="alerts-switch" type="checkbox" role="switch" checked><span class="switch-track" aria-hidden="true"></span></label><label class="switch-row"><span><strong>Pause sold-out listings</strong><small>Hide variants with zero units from the shop.</small></span><input id="pause-switch" type="checkbox" role="switch"><span class="switch-track" aria-hidden="true"></span></label></div></div>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Product inventory table. Scroll horizontally to view all columns."><table><caption class="sr-only">Current product inventory and stock states.</caption><thead><tr><th scope="col">Product</th><th scope="col">SKU</th><th scope="col">Variants</th><th scope="col">Available</th><th scope="col">Status</th><th scope="col">Updated</th></tr></thead><tbody id="inventory-rows"><tr data-state="healthy"><td><div class="product"><span class="product-art navy" aria-hidden="true"></span><a href="#oxford">Oxford overshirt</a></div></td><td>SWY-OS-402</td><td>4</td><td>48</td><td><span class="status healthy">● In stock</span></td><td>Today, 10:32</td></tr><tr data-state="low"><td><div class="product"><span class="product-art rose" aria-hidden="true"></span><a href="#dress">Soft sculpt dress</a></div></td><td>SWY-SD-210</td><td>3</td><td>04</td><td><span class="status low">● Low stock</span></td><td>Today, 09:14</td></tr><tr data-state="out"><td><div class="product"><span class="product-art stone" aria-hidden="true"></span><a href="#trouser">Wide-leg trouser</a></div></td><td>SWY-WT-815</td><td>5</td><td>00</td><td><span class="status out">● Sold out</span></td><td>Yesterday</td></tr><tr data-state="low"><td><div class="product"><span class="product-art sage" aria-hidden="true"></span><a href="#shirt">Camp-collar shirt</a></div></td><td>SWY-CC-114</td><td>4</td><td>05</td><td><span class="status low">● Low stock</span></td><td>18 Nov 2026</td></tr></tbody></table></div>
+        </div>
+      </section>
+    </main>
+    <footer><a class="brand" href="../">SWAY<span>.</span></a><p>Commerce that keeps pace.</p><a href="#help">Merchant help</a></footer><p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+    <script src="./app.js"></script>
+  </body>
+</html>

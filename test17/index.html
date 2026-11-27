@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Glowhaus is a modern, accessible beauty shop experience.">
+  <title>Glowhaus — beauty, made personal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement" role="status"><span>Complimentary delivery on orders over ₹799</span><button class="text-button" data-under-dev>Find a store</button></div>
+  <header class="site-header">
+    <button class="mobile-menu icon-button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+    <a class="brand" href="#top" aria-label="Glowhaus home">glow<span>haus</span></a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="#new">New</a><a href="#shop">Shop</a><a href="#edit">The edit</a><a href="#rewards">Rewards</a></nav>
+    <div class="header-actions">
+      <button class="icon-button" id="search-button" aria-label="Search products" aria-haspopup="dialog"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="5.8"></circle><path d="m15.1 15.1 5 5"></path></svg></button>
+      <button class="icon-button" id="account-button" aria-label="Account"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M4.8 20c.8-3.6 3.2-5.5 7.2-5.5s6.4 1.9 7.2 5.5"></path></svg></button>
+      <button class="bag-button" id="bag-button" aria-label="Shopping bag, 0 items" aria-expanded="false" aria-controls="bag-panel"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 8.5h14l-1 11H6l-1-11Z"></path><path d="M9 9V6.8A3 3 0 0 1 12 4a3 3 0 0 1 3 2.8V9"></path></svg><span id="bag-count">0</span></button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#new">New</a><a href="#shop">Shop</a><a href="#edit">The edit</a><a href="#rewards">Rewards</a><button data-under-dev>Sign in</button></nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="kicker">THE FESTIVE EDIT</p><h1 id="hero-title">Your glow,<br><em>in full colour.</em></h1><p class="hero-text">Meet complexion heroes and high-shine colour made for your kind of celebration.</p><div class="hero-actions"><a class="button button-dark" href="#shop">Shop the edit</a><button class="button button-light" id="routine-button">Build my routine</button></div></div>
+      <div class="hero-visual"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-image"><img src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=1000&q=85" alt="Woman wearing radiant pink makeup" fetchpriority="high"></div><p class="hero-sticker">made for<br>main character<br>moments</p></div>
+      <p class="hero-index" aria-hidden="true">01 — 04</p>
+    </section>
+
+    <section class="category-strip" id="new" aria-labelledby="category-title"><div class="section-head"><p class="kicker">DISCOVER MORE</p><h2 id="category-title">Beauty, your way.</h2><a href="#shop">View all</a></div><div class="categories"><a href="#shop" data-filter="Makeup"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=480&q=80" alt="Makeup products"><span>Makeup</span></a><a href="#shop" data-filter="Skincare"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=480&q=80" alt="Skincare jars"><span>Skincare</span></a><a href="#shop" data-filter="Hair"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=480&q=80" alt="Hair care bottles"><span>Hair</span></a><a href="#shop" data-filter="Fragrance"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=480&q=80" alt="Fragrance bottle"><span>Fragrance</span></a></div></section>
+
+    <section class="shop-section" id="shop" aria-labelledby="shop-title"><div class="section-head product-head"><div><p class="kicker">BESTSELLERS</p><h2 id="shop-title">The glow edit.</h2></div><div class="shop-tools"><button class="filter-button" id="filter-button" aria-expanded="false" aria-controls="filter-panel">Filter <span id="filter-count"></span></button><label class="sort-label">Sort <select id="sort-select" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label></div></div>
+      <div class="filter-panel" id="filter-panel" hidden><div><strong>Shop by category</strong><div class="filter-options"><button data-filter="All" class="selected">All products</button><button data-filter="Makeup">Makeup</button><button data-filter="Skincare">Skincare</button><button data-filter="Hair">Hair</button><button data-filter="Fragrance">Fragrance</button></div></div><button class="clear-filter" id="clear-filter">Clear filters</button></div>
+      <p class="results-copy" id="results-copy" role="status" aria-live="polite">Showing 6 covetable finds</p>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="editorial" id="edit" aria-labelledby="edit-title"><div class="editorial-image"><img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1000&q=85" alt="Close-up of glossy beauty makeup"><span>THE GLOW GUIDE</span></div><div class="editorial-copy"><p class="kicker">OUR TAKE</p><h2 id="edit-title">The art of<br><em>soft glamour.</em></h2><p>Gloss that catches candlelight. Skin that looks like skin, only a little more alive. Our beauty desk maps the looks worth saving now.</p><button class="line-button" data-under-dev>Read the beauty story <span aria-hidden="true">↗</span></button></div></section>
+
+    <section class="rewards" id="rewards" aria-labelledby="rewards-title"><div><p class="kicker">GLOWHAUS MEMBERS</p><h2 id="rewards-title">More beauty,<br>more <em>back.</em></h2></div><div><p>Collect a little something with every beauty find. Unlock early access, birthday treats and member-only edits.</p><button class="button button-light" data-under-dev>Explore the club</button></div></section>
+
+    <section class="newsletter" aria-labelledby="newsletter-title"><p class="kicker">IN THE KNOW</p><h2 id="newsletter-title">A brighter inbox awaits.</h2><p>New drops, thoughtful edits and 10% off your first order.</p><form id="newsletter-form" novalidate><label class="sr-only" for="email">Email address</label><input id="email" type="email" autocomplete="email" placeholder="Your email address" required><button class="button button-dark" type="submit">Sign me up</button></form><p class="form-message" id="form-message" role="status" aria-live="polite"></p></section>
+  </main>
+
+  <footer><a class="brand" href="#top">glow<span>haus</span></a><div><a href="#shop">Shop</a><a href="#edit">Journal</a><button data-under-dev>Delivery & returns</button><button data-under-dev>Contact</button></div><p>© 2026 Glowhaus. An illustrative beauty shopping experience.</p></footer>
+  <aside class="bag-panel" id="bag-panel" aria-label="Shopping bag" aria-hidden="true"><div class="bag-heading"><h2>Your bag</h2><button class="icon-button" id="close-bag" aria-label="Close bag">×</button></div><div id="bag-items" class="bag-items"><p>Your beauty bag is waiting.</p></div><div class="bag-footer"><p>Subtotal <strong id="subtotal">₹0</strong></p><button class="button button-dark" id="checkout-button">Checkout</button></div></aside><div class="scrim" id="scrim" hidden></div>
+  <dialog id="search-dialog" aria-labelledby="search-title"><div class="dialog-head"><h2 id="search-title">Find your next favourite</h2><button class="icon-button" id="close-search" aria-label="Close search">×</button></div><label for="search-input">Search products</label><input id="search-input" type="search" placeholder="Try “serum” or “lip”" autocomplete="off"><div id="search-results" class="search-results" aria-live="polite"></div></dialog>
+  <dialog id="routine-dialog" aria-labelledby="routine-title"><button class="modal-close icon-button" data-close-dialog aria-label="Close routine builder">×</button><p class="kicker">FIND YOUR FINISH</p><h2 id="routine-title">What are you in the mood for?</h2><div class="routine-options"><button data-routine="Dewy skin">Dewy skin</button><button data-routine="A bold lip">A bold lip</button><button data-routine="The full glow">The full glow</button></div><p id="routine-result" role="status" aria-live="polite"></p></dialog>
+  <template id="product-template"><article class="product-card"><div class="product-image-wrap"><span class="tag"></span><button class="wish-button" aria-label="Save product" aria-pressed="false"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 5.7a5.1 5.1 0 0 0-7.2 0L12 7.3l-1.6-1.6a5.1 5.1 0 0 0-7.2 7.2L12 21l8.8-8.1a5.1 5.1 0 0 0 0-7.2Z"></path></svg></button><img><button class="quick-add">Quick add</button></div><div class="product-info"><p class="product-brand"></p><h3></h3><p class="product-meta"></p><p class="price"></p></div></article></template>
+  <script src="app.js"></script>
+</body>
+</html>
